@@ -34,7 +34,14 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    respond_to do |format|
+      if @portfolio_item.destroy
+        format.html { redirect_to porfolios_path, notice: 'Successfully deleted' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   private
