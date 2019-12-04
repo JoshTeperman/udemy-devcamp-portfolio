@@ -1,8 +1,10 @@
 class Portfolio < ApplicationRecord
   include Placeholder
+  
   validates :title, :body, :main_image, :thumb_image, presence: true
-
   after_initialize :set_defaults
+  
+  has_many :technologies
 
   private
 
