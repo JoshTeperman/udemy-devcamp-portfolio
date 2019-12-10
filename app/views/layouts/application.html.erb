@@ -12,6 +12,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= render 'shared/nav' %>
+
     <% if session[:referrer] %>
       <h3>Welcome. Thanks for visiting us from <%= session[:referrer] %></h3>
     <% end %>
