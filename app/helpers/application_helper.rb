@@ -12,4 +12,8 @@ module ApplicationHelper
     greeting = "Welcome. Thanks for visiting us from #{session[:referrer]}"
     content_tag(:h3, greeting, class: 'source-greeting') if session[:referrer]
   end
+
+  def copyright_generator
+    @copyright = ViewTools::Renderer.copyright(name: 'Josh Teperman', msg: 'All Rights Reserved')
+  end
 end
