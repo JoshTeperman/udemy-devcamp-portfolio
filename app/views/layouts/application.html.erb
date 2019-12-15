@@ -13,14 +13,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= login_helper %>
-
     <%= render 'shared/nav' %>
+    <%= login_helper %>
 
     <%= yield %>
 
     <%= source_helper %>
-
     <%= copyright_generator %>
   </body>
 </html>

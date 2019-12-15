@@ -1,10 +1,22 @@
 User.create!(
   name: 'Admin User',
   email: 'admin@example.com',
-  password: 'password'
+  password: 'password',
+  role: 'admin'
 )
 
 puts 'Admin created'
+
+5.times do |user|
+  User.create!(
+    name: "Number_#{user + 1} Example User",
+    email: "user_#{user+ 1}@example.com",
+    password: 'password',
+    role: 'user'
+  )
+end
+
+puts '5 Users Created'
 
 3.times do |topic|
   Topic.create!(title: "Topic #{topic}")
