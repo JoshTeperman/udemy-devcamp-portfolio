@@ -1,4 +1,4 @@
-module GuestUser
+module CurrentUserConcern
   extend ActiveSupport::Concern
 
   included do
@@ -10,6 +10,6 @@ module GuestUser
   private
 
   def guest_user
-    OpenStruct.new(name: 'Guest User', first_name: 'Guest', last_name: 'User', middle_name: nil, email: 'guest@user.com')
+    GuestUser.new(name: 'Guest User', email: 'guest@user.com')
   end
 end
